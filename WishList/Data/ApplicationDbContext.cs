@@ -13,7 +13,7 @@ namespace WishList.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<Item> Items;
+        public DbSet<Item> Items { get; set; }
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 
@@ -21,7 +21,6 @@ namespace WishList.Data
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
             services.AddDbContext<ApplicationDbContext>( options => options.UseInMemoryDatabase("WishList"));
         }
     }
