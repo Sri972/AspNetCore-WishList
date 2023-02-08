@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using WishList.Data;
 using WishList.Controllers;
 using WishList.Models;
@@ -18,9 +19,10 @@ namespace WishList.Data
 
         }
 
-        public void ConfigureServices()
+        public void ConfigureServices(IServiceCollection services)
         {
-          
+            services.AddMvc();
+            services.AddDbContext<ApplicationDbContext>( options => options.UseInMemoryDatabase("WishList"));
         }
     }
 }
