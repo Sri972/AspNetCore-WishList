@@ -12,7 +12,7 @@ namespace WishList.Models
 		}
 
 		[Required]
-		[StringLength(50)]
+		[MaxLength(50)]
 		public string Description
 		{
 			get;

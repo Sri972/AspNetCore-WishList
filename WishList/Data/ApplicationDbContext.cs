@@ -21,7 +21,7 @@ namespace WishList.Data
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>( options => options.UseInMemoryDatabase("WishList"));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("Wishlist"));
         }
     }
 }
